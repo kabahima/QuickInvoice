@@ -1,0 +1,13 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>{{ client.company_name }}</h1>
+  <p>Contact: {{ client.contact_person }}</p>
+  <p>Email: {{ client.email }}</p>
+  <p>Phone: {{ client.phone_number }}</p>
+  <p>Address: {{ client.address }}</p>
+  <p>City: {{ client.city }}</p>
+  <p>Country: {{ client.country }}</p>
+  <a href="{% url 'client_update' client.pk %}">Edit</a>
+  <a href="{% url 'client_delete' client.pk %}">Delete</a>
+{% endblock %}

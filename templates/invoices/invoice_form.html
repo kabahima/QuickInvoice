@@ -1,0 +1,10 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>{% if invoice %}Edit Invoice{% else %}Create New Invoice{% endif %}</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% if invoice %}Update{% else %}Create{% endif %}</button>
+  </form>
+{% endblock %}

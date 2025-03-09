@@ -1,0 +1,10 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>{% if client %}Edit Client{% else %}Add New Client{% endif %}</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% if client %}Update Client{% else %}Create Client{% endif %}</button>
+  </form>
+{% endblock %}

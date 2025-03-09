@@ -1,0 +1,10 @@
+{% for payment in payments %}
+    <p>Transaction ID: {{ payment.transaction_id }}</p>
+    <p>Client: {{ payment.client.name }}</p>
+    <p>Invoice: {{ payment.invoice.invoice_number }}</p>
+    <p>Amount: {{ payment.amount_paid }}</p>
+    <p>Status: {{ payment.status }}</p>
+    <a href="{% url 'payment_detail' payment.pk %}">View</a>
+    <a href="{% url 'payment_update' payment.pk %}">Edit</a>
+    <a href="{% url 'payment_delete' payment.pk %}">Delete</a>
+{% endfor %}

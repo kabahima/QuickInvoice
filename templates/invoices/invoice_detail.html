@@ -1,0 +1,13 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>Invoice: {{ invoice.invoice_number }}</h1>
+  <p>Client: {{ invoice.client.company_name }}</p>
+  <p>Issued By: {{ invoice.user.username }}</p>
+  <p>Amount: {{ invoice.amount }}</p>
+  <p>Issue Date: {{ invoice.issue_date }}</p>
+  <p>Due Date: {{ invoice.due_date }}</p>
+  <p>Status: {{ invoice.status }}</p>
+  <a href="{% url 'invoice_update' invoice.pk %}">Edit</a>
+  <a href="{% url 'invoice_delete' invoice.pk %}">Delete</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h1>Clients</h1>
+  <a href="{% url 'client_create' %}">Add New Client</a>
+  <ul>
+    {% for client in clients %}
+      <li>
+        <a href="{% url 'client_detail' client.pk %}">{{ client.company_name }}</a>
+        - <a href="{% url 'client_update' client.pk %}">Edit</a>
+        - <a href="{% url 'client_delete' client.pk %}">Delete</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

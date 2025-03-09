@@ -1,0 +1,6 @@
+<p>Transaction ID: {{ payment.transaction_id }}</p>
+<p>Client: {{ payment.client.name }}</p>
+<p>Invoice: {{ payment.invoice.invoice_number }}</p>
+<p>Amount: {{ payment.amount_paid }}</p>
+<p>Status: {{ payment.status }}</p>
+<a href="{% url 'payment_list' %}">Back to Payments</a>
